@@ -70,5 +70,16 @@ export const createImage = async (data) => {
     throw new Error("Missing somthing in (img url , text , userid ) ");
   }
   dbconnection();
-  const newImage = await  Image.create({ imgurl, text, userid });
+  const newImage = await Image.create({ imgurl, text, userid });
+};
+
+export const getImage = async () => {
+  try {
+    dbconnection();
+    const allImage = await Image.find({});
+    console.log(allImage);
+    return allImage;
+  } catch (error) {
+    throw new Error(error?.message);
+  }
 };
