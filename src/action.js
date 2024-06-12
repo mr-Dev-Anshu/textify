@@ -59,7 +59,7 @@ export const signUp = async (formData) => {
     const check = await User.find({userid}) ; 
 
     if(check) {
-       throw new Error("Already Signed  in ,  Please Login ") ; 
+       throw new Error("Already Signed   in ,  Please Login ") ; 
     }
   const hashedPassword = await bcryptjs.hash(password, 10);
   const newUser = await User.create({ userid, password: hashedPassword });
