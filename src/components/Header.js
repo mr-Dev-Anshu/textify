@@ -15,7 +15,7 @@ const Header = async () => {
               <button className="cursor-pointer">Logout</button>
             </form>
           </li>:<Link href={"/signup"}><li className="cursor-pointer ">Login</li></Link>}
-          <li className="cursor-pointer ">Gitgub</li>
+          <li className="cursor-pointer ">GitHub</li>
         </ul>
       </div>
     </div>

@@ -5,7 +5,7 @@ const convertor = async (imgUrl) => {
   await worker.loadLanguage('eng');
   await worker.initialize('eng');
   const { data: { text } } = await worker.recognize(imgUrl);
-  console.log(text);
+  // console.log(text);
   await worker.terminate();
   return text;
 };

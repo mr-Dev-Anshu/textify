@@ -7,6 +7,7 @@ import { redirect } from "next/navigation";
 import { dbconnection } from "./db/dbconnection";
 import User from "./model/user.model";
 import bcryptjs from "bcryptjs";
+import Image from "./model/Images.model";
 
 export const getSession = async () => {
   const session = await getIronSession(cookies(), sessionOptions);
@@ -61,4 +62,13 @@ export const signUp = async (formData) => {
   session.userid = userid;
   await session.save();
   redirect("/profile");
+};
+export const createImage = async (data) => {
+  const { imgurl, text, userid } = data;
+  console.log(imgurl, text, userid);
+  if (!imgurl || !text || !userid) {
+    throw new Error("Missing somthing in (img url , text , userid ) ");
+  }
+  dbconnection();
+  const newImage = await  Image.create({ imgurl, text, userid });
 };
