@@ -1,23 +1,12 @@
 "use client";
-import axios from "axios";
+import { getImage } from "@/action";
 import React, { useEffect, useState } from "react";
-
-const page =  () => {
+const page = () => {
   const [allImage, setAllImage] = useState();
-  const getData = async () => {
-    try {
-      const res = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/getimages`);
-      console.log(res.data);
-      setAllImage(res.data) ; 
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-   useEffect(()=> {
-      getData()
-   } , []) ; 
-
+  useEffect(async () => {
+    const images = await getImage();
+    setAllImage(images);
+  }, []);
   return (
     <div className="text-white md:px-6 md:py-8 space-y-4 ">
       {allImage?.map((item) => (

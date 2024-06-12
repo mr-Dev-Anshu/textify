@@ -11,6 +11,7 @@ import Image from "./model/Images.model";
 
 export const getSession = async () => {
   const session = await getIronSession(cookies(), sessionOptions);
+  session.res?.setHeader("Cache-Control", "no-store, must-revalidate");
   return session;
 };
 
@@ -75,8 +76,10 @@ export const createImage = async (data) => {
 
 export const getImage = async () => {
   try {
+    const session = await getSession();
+    const userid = session.userid;
     dbconnection();
-    const allImage = await Image.find({});
+    const allImage = await Image.find({ userid });
     console.log(allImage);
     return allImage;
   } catch (error) {
