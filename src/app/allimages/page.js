@@ -26,6 +26,7 @@ const page = () => {
   }, []);
 
   return (
+    
     <div className="text-white md:px-6 md:py-8 space-y-4 ">
       {allImage?.map((item) => (
         <div className="grid md:grid-cols-2 gap-3">
