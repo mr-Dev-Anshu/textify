@@ -8,14 +8,24 @@ const Header = async () => {
   return (
     <div>
       <div className=" ">
-        <ul className=" flex  justify-between md:px-10 w-[100%]  text-white font-bold text-2xl  border-b border-gray-500  py-4 ">
-          <Link href={"/"}><li className="cursor-pointer ">Textify</li></Link>
-          {session.userid?<li className="cursor-pointer ">
-            <form action={logout}>
-              <button className="cursor-pointer">Logout</button>
-            </form>
-          </li>:<Link href={"/signup"}><li className="cursor-pointer ">Login</li></Link>}
-          <li className="cursor-pointer ">GitHub</li>
+        <ul className=" flex  justify-between md:px-10 px-4 w-[100%]  text-white font-bold text-2xl  border-b border-gray-500  py-4 ">
+          <Link href={"/"}>
+            <li className="cursor-pointer ">Textify</li>
+          </Link>
+          {session.userid ? (
+            <li className="cursor-pointer ">
+              <form action={logout}>
+                <button className="cursor-pointer">Logout</button>
+              </form>
+            </li>
+          ) : (
+            <Link href={"/signup"}>
+              <li className="cursor-pointer ">Login</li>
+            </Link>
+          )}
+          <a href="https://github.com/mr-Dev-Anshu/textify">
+            <li className="cursor-pointer ">GitHub</li>
+          </a>
         </ul>
       </div>
     </div>

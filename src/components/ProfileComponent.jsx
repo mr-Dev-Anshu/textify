@@ -53,7 +53,7 @@ const ProfileComponent = ({ userid }) => {
   };
 
   return (
-    <div className="flex justify-center items-center md:mt-12 flex-col space-y-4 mb-12">
+    <div className="flex justify-center items-center md:mt-12 mt-6  flex-col space-y-4 mb-12">
       <div className="text-white md:text-4xl font-bold">
         Effortlessly Extract Text from Any Image
       </div>

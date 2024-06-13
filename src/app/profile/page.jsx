@@ -10,8 +10,8 @@ const page = async () => {
     redirect("/login");
   }
   return (
-    <div className="text-white">
-      <div className=" md:mt-12  text-2xl font-bold text-blue-500 flex justify-center ">
+    <div className="text-white space-y-6">
+      <div className=" md:mt-12 mt-6  text-2xl font-bold text-blue-500 flex justify-center ">
         Hello {session.userid}{" "}
       </div>
       <div className=" md:mt-4  text-xl font-medium  flex justify-center ">

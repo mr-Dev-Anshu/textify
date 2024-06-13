@@ -27,11 +27,11 @@ const HomePublic = () => {
     }
   };
   return (
-    <div className="flex justify-center items-center md:mt-12 flex-col space-y-4 mb-12  ">
-      <div className="text-white md:text-4xl font-bold ">
+    <div className="flex justify-center items-center md:mt-12 mt-6 flex-col space-y-4 mb-12 ">
+      <div className="text-white md:text-4xl  font-bold ">
         Effortlessly Extract Text from Any Image
       </div>
-      <p className="font-bold text-2xl text-green-600 ">{message}</p>
+      <p className="font-bold md:text-2xl  px-6  text-green-600 ">{message}</p>
       <input type="file" onChange={handleChange} hidden ref={inputRef} />
       <div
         onClick={openBrowse}
@@ -46,10 +46,10 @@ const HomePublic = () => {
       </div>
       {textData && (
         <div className="flex  flex-col space-y-6  justify-center items-center border-t border-gray-500 md:mt-12  ">
-          <p className="text-white w-[60%] text-2xl font-bold border-b border-gray-500 py-2 text-center  ">
+          <p className="text-white md:w-[60%] w-[90%] text-2xl font-bold border-b border-gray-500 py-2 text-center  ">
             Here is your Text || You Can Copy and Paste any where{" "}
           </p>
-          <p className="text-xl font-medium  w-[60%] text-center ring ring-gray-500 px-5 py-4  rounded-md   text-gray-300  ">
+          <p className="text-xl font-medium  md:w-[60%] w-[90%] text-center ring ring-gray-500 px-5 py-4  rounded-md   text-gray-300  ">
             {textData}
           </p>
         </div>

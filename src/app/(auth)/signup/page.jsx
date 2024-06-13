@@ -33,8 +33,8 @@ const Page = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center md:mt-24 text-white">
-      <form onSubmit={handleSignUp} className="md:w-[40%] border border-gray-800 shadow-2xl flex justify-center flex-col items-center md:py-12 space-y-6 rounded-md">
+    <div className="flex flex-col items-center justify-center md:mt-24 mt-20  text-white">
+      <form onSubmit={handleSignUp} className="md:w-[40%] border border-gray-800 shadow-2xl flex justify-center flex-col items-center md:py-12 py-6 px-6  space-y-6 rounded-md">
         <p className="text-2xl font-bold">Signup here</p>
         <input
           className="bg-transparent focus:outline border border-gray-600 px-6 py-2 placeholder:text-gray-500 placeholder:text-xl placeholder:font-bold rounded-md md:w-[70%]"
@@ -48,7 +48,7 @@ const Page = () => {
           type="password"
           name="password"
         />
-        <button className="bg-green-700 py-2 px-4 rounded-md md:w-[70%]" type="submit">
+        <button className="bg-green-700 py-2 px-4 rounded-md md:w-[70%] w-[80%]" type="submit">
           {loading ? "Loading..." : "SignUp"}
         </button>
       </form>
@@ -57,10 +57,10 @@ const Page = () => {
           {errorMessage}
         </div>
       )}
-      <div className="border border-gray-700 md:mt-6 w-[40%] text-2xl py-4 px-12">
+      <div className="border border-gray-700 md:mt-6 mt-6 w-[90%] md:w-[40%]  md:text-2xl  py-4 md:px-12 px-6">
         If you already have an account,{" "}
         <Link href={"/login"}>
-          <span className="text-green-600 cursor-pointer text-2xl">Login</span>
+          <span className="text-green-600 cursor-pointer md:text-2xl">Login</span>
         </Link>
       </div>
     </div>
